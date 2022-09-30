@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
+
+
 :root {
+
     --dark: rgba(52, 44, 36, 0.7);
     --darker: rgba(41, 36, 32, 0.8);
     --darkest: rgba(27, 24, 22, 0.9);
+    --gray: rgba(130, 123, 120, 0.7);
     --light: rgba(173, 159, 146, 0.7);
     --orange: rgba(247, 128, 24, 0.7);
     --red: rgba(234, 83, 3, 0.7);
-    
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Noto Sans Mono', monospace;
 }
