@@ -47,6 +47,12 @@ header h1 {
 
 }
 
+#todo-input::placeholder {
+
+    color: var(--darker);
+
+}
+
 #todo-submit {
 
     margin: 0 2rem 0 2rem;
@@ -58,8 +64,42 @@ input, button {
     appearance: none;
     /* border-radius: 8%;*/ 
     padding: .3rem;
-    outline: 90%;
+    outline: none;
     background: var(--gray);
+    box-shadow: .5px 4px;
+    transition: box-shadow .7s;
+
+}
+
+/* how to transition shadow when active but not hovering */
+
+input:focus, button:focus {
+
+    color: var(--darkest);
+    border: 1px solid var(--darkest);
+    transition: color .7s;
+    
+
+}
+
+input:disabled,button:disabled {
+
+    box-shadow: .5px 4px;
+    transition: box-shadow .7s;
+
+}
+
+input:active, button:active {
+
+    box-shadow: .5px 4px;
+    transition: box-shadow .7s;
+
+}
+
+input:hover, button:hover {
+
+    box-shadow: 2px 6px;
+    transition: box-shadow .7s;
 
 }
 
