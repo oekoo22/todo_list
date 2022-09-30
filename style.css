@@ -42,8 +42,15 @@ header {
 header h1 {
 
     font-size: 2.2rem;
-    margin-bottom: .8rem;
+    margin-bottom: 2rem;
+    
 
+}
+
+#todo-submit {
+
+    margin: 0 2rem 0 2rem;
+    
 }
 
 input, button {
@@ -62,6 +69,19 @@ main section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 4rem;
+
+}
+
+#tasks {
+
+    display: flex;
     margin-top: 2rem;
+
+}
+
+#task {
+
+    margin: 0 2rem 0 2rem;
 
 }
