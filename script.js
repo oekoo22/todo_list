@@ -14,10 +14,10 @@ window.addEventListener('load', () => {
         }
 
         const newListElement = document.createElement("div");
-        newListElement.classList.add("tasks");
+        newListElement.classList.add("task");
 
         const newTodoElement = document.createElement("div");
-        newTodoElement.classList.add("task");
+        newTodoElement.classList.add("content");
         newTodoElement.innerText = todo;
 
         newListElement.appendChild(newTodoElement);
