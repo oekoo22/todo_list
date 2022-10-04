@@ -41,9 +41,13 @@ window.addEventListener('load', () => {
         input.value = "";
 
         newListEdit.addEventListener('click', () => {
+            if (newListEdit.innerText == "Edit") {
             newListInput.removeAttribute("readonly");
             newListInput.focus();
             newListEdit.innerText = "Save";
+            } else {
+                console.log("Hallo");
+            }
         })
     })
 });
