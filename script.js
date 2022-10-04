@@ -9,10 +9,19 @@ window.addEventListener('load', () => {
         const todo = input.value;
 
         if (!todo) {
-            alert('Please enter a task')
-        } else {
-            console.log('Task submitted');
+            alert("Please enter a task");   
+            return
         }
+
+        const newListElement = document.createElement("div");
+        newListElement.classList.add("tasks");
+
+        const newTodoElement = document.createElement("div");
+        newTodoElement.classList.add("task");
+        newTodoElement.innerText = todo;
+
+        newListElement.appendChild(newTodoElement);
+        listElement.appendChild(newListElement);
     })
 });
 
