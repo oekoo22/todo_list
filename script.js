@@ -4,7 +4,10 @@ window.addEventListener('load', () => {
     const listElement = document.querySelector("#tasks");
 
     form.addEventListener('submit', (e) => {
-        e.preventDefault(); // prevent the submit-button to refresh the site
+        e.preventDefault(); // prevent the submit-button to refresh the page
+
+        const todo = input.value;
+        console.log(todo);
     })
 });
 
