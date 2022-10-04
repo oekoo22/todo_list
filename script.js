@@ -7,7 +7,12 @@ window.addEventListener('load', () => {
         e.preventDefault(); // prevent the submit-button to refresh the page
 
         const todo = input.value;
-        console.log(todo);
+
+        if (!todo) {
+            alert('Please enter a task')
+        } else {
+            console.log('Task submitted');
+        }
     })
 });
 
