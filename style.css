@@ -81,7 +81,7 @@ input:focus, button:focus, .content {
 
 }
 
-input:disabled,button:disabled {
+input:disabled, button:disabled {
 
     box-shadow: .5px 4px;
     transition: box-shadow .7s;
@@ -120,20 +120,17 @@ main section {
 #tasks {
 
     display: flex;
+    flex-direction: column;
     margin-top: 2rem;
 
 }
 
-#task {
-
-    margin: 0 2rem 0 2rem;
-
-}
-
 .content {
+
     appearance: none;
     /* border-radius: 8%;*/ 
     padding: .4rem;
+    margin: .35rem;
     font-size: .775rem;
     outline: none;
     background: var(--gray);
