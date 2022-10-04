@@ -16,12 +16,35 @@ window.addEventListener('load', () => {
         const newListElement = document.createElement("div");
         newListElement.classList.add("task");
 
-        const newTodoElement = document.createElement("div");
-        newTodoElement.classList.add("content");
-        newTodoElement.innerText = todo;
+        const newListInput = document.createElement("input");
+        newListInput.classList.add("text");
+        newListInput.type = "text";
+        newListInput.value = todo;
+        newListInput.setAttribute("readonly", "readonly");
 
-        newListElement.appendChild(newTodoElement);
+        newListElement.appendChild(newListInput);
+
+        const newListEdit = document.createElement("button");
+        newListEdit.classList.add("edit");
+        newListEdit.innerText = "Edit";
+
+        newListElement.appendChild(newListEdit);
+
+        const newListDelete = document.createElement("button");
+        newListDelete.classList.add("delete");
+        newListDelete.innerText = "Delete";
+
+        newListElement.appendChild(newListDelete);
+
         listElement.appendChild(newListElement);
+
+        input.value = "";
+
+        newListEdit.addEventListener('click', () => {
+            newListInput.removeAttribute("readonly");
+            newListInput.focus();
+            newListEdit.innerText = "Save";
+        })
     })
 });
 
