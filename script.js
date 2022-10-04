@@ -42,12 +42,17 @@ window.addEventListener('load', () => {
 
         newListEdit.addEventListener('click', () => {
             if (newListEdit.innerText == "Edit") {
-            newListInput.removeAttribute("readonly");
-            newListInput.focus();
-            newListEdit.innerText = "Save";
+                newListInput.removeAttribute("readonly");
+                newListInput.focus();
+                newListEdit.innerText = "Save";
             } else {
-                console.log("Hallo");
+                newListInput.setAttribute("readonly", "readonly");
+                newListEdit.innerText = "Edit";
             }
+        })
+
+        newListDelete.addEventListener('click', () => {
+            listElement.removeChild(newListElement);
         })
     })
 });
