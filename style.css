@@ -75,10 +75,8 @@ input, button {
 
 input:focus, button:focus {
 
-    color: var(--darkest);
+    color: rgba(28, 24, 20, 1);
     border: 1px solid var(--darkest);
-    transition: color .7s;
-    
 
 }
 
@@ -93,6 +91,7 @@ input:active, button:active {
 
     box-shadow: .5px 4px;
     transition: box-shadow .7s;
+    color: black;
 
 }
 
