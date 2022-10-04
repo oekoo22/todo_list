@@ -74,7 +74,7 @@ input, button {
 
 /* how to transition shadow when active but not hovering */
 
-input:focus, button:focus {
+input:focus, button:focus, .content {
 
     color: rgba(28, 24, 20, 1);
     border: 1px solid var(--darkest);
@@ -96,7 +96,7 @@ input:active, button:active {
 
 }
 
-input:hover, button:hover {
+input:hover, button:hover, .content:hover {
 
     box-shadow: 2px 6px;
     transition: box-shadow .7s;
@@ -127,5 +127,18 @@ main section {
 #task {
 
     margin: 0 2rem 0 2rem;
+
+}
+
+.content {
+    appearance: none;
+    /* border-radius: 8%;*/ 
+    padding: .4rem;
+    font-size: .775rem;
+    outline: none;
+    background: var(--gray);
+    box-shadow: .5px 4px;
+    transition: box-shadow .7s;
+    color: black;
 
 }
