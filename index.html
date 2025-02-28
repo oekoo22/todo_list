@@ -1,66 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo-List</title>
-
+    <title>Nord ToDo-List</title>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-
     <header>
-
-        <h1>ToDo-List</h1>
-
+        <h1>Nord ToDo-List</h1>
         <form id="todo-form">
-
-            <input type="text" id="todo-input" placeholder="Enter a task" />
-            <input type="submit" id="todo-submit" value="Add" />
-
+            <input type="text" id="todo-input" placeholder="Neue Aufgabe eingeben..." />
+            <button type="submit" id="todo-submit">Hinzufügen <i class="fas fa-plus"></i></button>
         </form>
-
     </header>
 
     <main>
-
         <section class="todo-list">
-
-            <h2>ToDos</h2>
-
+            <h2>Meine Aufgaben</h2>
+            
             <div id="tasks">
-
-                <!-- <div id="task">
-
-                    <div class="content">
-
-                        <input type="text" class="text" value="Dummy-ToDo" readonly /> 
-
-                    </div>
-                    
-                </div>
-
-                <div class="actions">
-
-                    <button class="edit">Edit</button>
-                    <button class="delete">Delete</button>
-
-                </div> -->  
-
+                <!-- Hier werden die ToDos eingefügt -->
             </div>
-
+            
+            <div id="empty-state" class="empty-state">
+                <p>Keine Aufgaben vorhanden. Füge deine erste Aufgabe hinzu!</p>
+            </div>
         </section>
-
-
     </main>
-    
 
     <script src="script.js"></script>
-
 </body>
-
 </html>

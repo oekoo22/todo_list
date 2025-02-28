@@ -1,141 +1,241 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
 
-
 :root {
-
-    --dark: rgba(52, 44, 36, 0.7);
-    --darker: rgba(41, 36, 32, 0.8);
-    --darkest: rgba(27, 24, 22, 0.9);
-    --gray: rgba(130, 123, 120, 0.7);
-    --light: rgba(173, 159, 146, 0.7);
-    --orange: rgba(247, 128, 24, 0.7);
-    --red: rgba(234, 83, 3, 0.7);
-
+    /* Nord Theme Farben */
+    --nord0: #2E3440; /* Dunkelster Hintergrund */
+    --nord1: #3B4252; /* Dunkler Hintergrund */
+    --nord2: #434C5E; /* Hintergrund */
+    --nord3: #4C566A; /* Leichter Hintergrund */
+    --nord4: #D8DEE9; /* Heller Text */
+    --nord5: #E5E9F0; /* Hellerer Text */
+    --nord6: #ECEFF4; /* Hellster Text */
+    --nord7: #8FBCBB; /* Mint */
+    --nord8: #88C0D0; /* Hellblau */
+    --nord9: #81A1C1; /* Mittelblau */
+    --nord10: #5E81AC; /* Dunkelblau */
+    --nord11: #BF616A; /* Rot */
+    --nord12: #D08770; /* Orange */
+    --nord13: #EBCB8B; /* Gelb */
+    --nord14: #A3BE8C; /* Grün */
+    --nord15: #B48EAD; /* Lila */
 }
 
 * {
-
     box-sizing: border-box;
     margin: 0;
     font-family: 'Noto Sans Mono', monospace;
-
 }
 
 body {
-
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: var(--dark);
-
+    background: var(--nord0);
+    color: var(--nord6);
+    padding: 1rem;
 }
 
 header {
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    padding: 1.5rem 0;
+    background-color: var(--nord1);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
 
 header h1 {
-
     font-size: 2.2rem;
     margin-bottom: 2rem;
-    
+    color: var(--nord8);
+}
 
+#todo-form {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    background: var(--nord2);
+    color: var(--nord4);
+    border-radius: 5px 0 0 5px;
 }
 
 #todo-input::placeholder {
-
-    color: var(--darker);
-
+    color: var(--nord3);
 }
 
 #todo-submit {
-
-    margin: 0 2rem 0 2rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--nord10);
+    color: var(--nord6);
+    border: none;
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
-    
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#todo-submit:hover {
+    background: var(--nord9);
 }
 
 input, button {
-
-    appearance: none;
-    /* border-radius: 8%;*/ 
-    padding: .3rem;
     outline: none;
-    background: var(--gray);
-    box-shadow: .5px 4px;
-    transition: box-shadow .7s;
-
+    font-size: 1rem;
 }
 
-/* how to transition shadow when active but not hovering */
-
-input:focus, button:focus, .content {
-
-    color: rgba(28, 24, 20, 1);
-    border: 1px solid var(--darkest);
-
-}
-
-input:disabled, button:disabled {
-
-    box-shadow: .5px 4px;
-    transition: box-shadow .7s;
-
-}
-
-input:active, button:active {
-
-    box-shadow: .5px 4px;
-    transition: box-shadow .7s;
-    color: black;
-
-}
-
-input:hover, button:hover, .content:hover {
-
-    box-shadow: 2px 6px;
-    transition: box-shadow .7s;
-
-}
-
-button {
-    cursor: pointer;
+input:focus, button:focus {
+    outline: 2px solid var(--nord8);
 }
 
 main section {
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top: 4rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+.todo-list {
+    width: 100%;
+    background-color: var(--nord1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.todo-list h2 {
+    font-size: 1.8rem;
+    color: var(--nord8);
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 #tasks {
-
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
-
+    gap: 1rem;
+    width: 100%;
 }
 
-.text {
+.task {
+    display: flex;
+    align-items: center;
+    background: var(--nord2);
+    padding: 1rem;
+    border-radius: 5px;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
-    appearance: none;
-    /* border-radius: 8%;*/ 
-    padding: .4rem;
-    margin: .35rem;
-    font-size: .775rem;
+.task:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.task input.text {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--nord5);
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.task input.text:focus {
     outline: none;
-    background: var(--gray);
-    box-shadow: .5px 4px;
-    transition: box-shadow .7s;
-    color: black;
+    background: var(--nord3);
+    border-radius: 3px;
+}
 
+.task.completed input.text {
+    text-decoration: line-through;
+    color: var(--nord3);
+}
+
+.task-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.edit, .delete, .complete {
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit {
+    background: var(--nord9);
+    color: var(--nord0);
+}
+
+.edit:hover {
+    background: var(--nord8);
+}
+
+.delete {
+    background: var(--nord11);
+    color: var(--nord6);
+}
+
+.delete:hover {
+    background: #d07977;
+}
+
+.complete {
+    background: var(--nord14);
+    color: var(--nord0);
+}
+
+.complete:hover {
+    background: #b1cfa0;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--nord4);
+    padding: 2rem;
+    font-style: italic;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 600px) {
+    #todo-form {
+        flex-direction: column;
+    }
+    
+    #todo-input, #todo-submit {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .task {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .task input.text {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .task-buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
 }
