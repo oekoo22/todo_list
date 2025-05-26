@@ -6,7 +6,8 @@ Diese kleine Webanwendung ist eine einfach gehaltene ToDo-Liste. Alle Aufgaben w
 - Aufgaben anlegen, bearbeiten, erledigen und löschen
 - Aufgaben werden automatisch im `localStorage` gespeichert
 - Tastenkürzel: **Strg + Enter** fügt eine neue Aufgabe hinzu
-- Schlichtes dunkles Design mithilfe von [Tailwind CSS](https://cdn.jsdelivr.net/npm/tailwindcss) über CDN und eigenen Anpassungen
+- Umschaltbarer Light/Dark Mode, der automatisch den Systemeinstellungen folgt
+- Einheitliches Layout mit Tailwind CSS über CDN und eigenen Anpassungen
 
 ## Projektstruktur
 - `index.html` – Grundgerüst der Seite
