@@ -3,6 +3,13 @@ window.addEventListener('load', () => {
     const input = document.querySelector("#todo-input");
     const listElement = document.querySelector("#tasks");
     const emptyState = document.querySelector("#empty-state");
+    const themeToggle = document.querySelector("#theme-toggle");
+
+    initTheme();
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        setTheme(isDark ? 'light' : 'dark');
+    });
     
     // Lokale Speicherung laden
     loadTasks();
@@ -170,6 +177,22 @@ window.addEventListener('load', () => {
                 document.body.removeChild(notification);
             }, 300);
         }, 3000);
+    }
+
+    function setTheme(theme) {
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+        localStorage.setItem('theme', theme);
+        const icon = document.getElementById('theme-icon');
+        if (icon) {
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+    }
+
+    function initTheme() {
+        const saved = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ? saved : (systemPrefersDark ? 'dark' : 'light');
+        setTheme(theme);
     }
     
     // Tastatur-Shortcuts

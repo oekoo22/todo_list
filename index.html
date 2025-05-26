@@ -11,24 +11,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body class="bg-gray-950 min-h-screen text-gray-100 p-4">
-    <header class="bg-gray-900 rounded-lg shadow p-6 mb-8 flex flex-col items-center">
+<body class="min-h-screen p-4">
+    <header class="rounded-lg shadow p-6 mb-8 flex flex-col items-center relative">
+        <button id="theme-toggle" aria-label="Farbschema wechseln" class="absolute top-2 right-2">
+            <i id="theme-icon" class="fas fa-moon"></i>
+        </button>
         <h1 class="text-3xl font-bold mb-4 text-center">Nord ToDo-List</h1>
         <form id="todo-form" class="flex w-full max-w-md gap-2">
-            <input type="text" id="todo-input" placeholder="Neue Aufgabe eingeben..." class="flex-1 px-3 py-2 rounded-md bg-gray-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600" />
+            <input type="text" id="todo-input" placeholder="Neue Aufgabe eingeben..." class="flex-1 px-3 py-2 rounded-md theme-input focus:outline-none focus:ring-2 focus:ring-blue-600" />
             <button type="submit" id="todo-submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-md text-white font-semibold flex items-center gap-1">Hinzufügen <i class="fas fa-plus"></i></button>
         </form>
     </header>
 
     <main>
-        <section class="bg-gray-900 rounded-lg shadow p-6 max-w-2xl mx-auto">
+        <section class="rounded-lg shadow p-6 max-w-2xl mx-auto">
             <h2 class="text-2xl font-bold mb-4 text-center">Meine Aufgaben</h2>
 
             <div id="tasks" class="space-y-2">
                 <!-- Hier werden die ToDos eingefügt -->
             </div>
 
-            <div id="empty-state" class="text-center text-gray-400 italic py-4">
+            <div id="empty-state" class="text-center italic py-4">
                 <p>Keine Aufgaben vorhanden. Füge deine erste Aufgabe hinzu!</p>
             </div>
         </section>

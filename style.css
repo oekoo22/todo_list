@@ -1,31 +1,89 @@
+/* Theme variables */
+:root {
+    --bg: #f9fafb;
+    --bg-secondary: #ffffff;
+    --bg-input: #f3f4f6;
+    --text: #1f2937;
+    --text-muted: #6b7280;
+    --task-bg: #f3f4f6;
+    --task-bg-hover: #e5e7eb;
+    --button-edit: #3b82f6;
+    --button-edit-hover: #2563eb;
+    --button-delete: #ef4444;
+    --button-delete-hover: #dc2626;
+    --button-complete: #10b981;
+    --button-complete-hover: #059669;
+}
+
+:root.dark {
+    --bg: #0f172a;
+    --bg-secondary: #1f2937;
+    --bg-input: #374151;
+    --text: #f3f4f6;
+    --text-muted: #9ca3af;
+    --task-bg: #1f2937;
+    --task-bg-hover: #374151;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+header, section {
+    background-color: var(--bg-secondary);
+}
+
+input.theme-input {
+    background-color: var(--bg-input);
+    color: var(--text);
+}
+
+#empty-state {
+    color: var(--text-muted);
+}
+
+#theme-toggle {
+    background-color: var(--bg-input);
+    color: var(--text);
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#theme-toggle:hover {
+    background-color: var(--task-bg-hover);
+}
+
 /* Custom styles for task elements using shadcn inspired look */
+
 
 .task {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #1f2937; /* gray-800 */
+    background-color: var(--task-bg);
     padding: 0.75rem;
-    border-radius: 0.375rem; /* rounded-md */
+    border-radius: 0.375rem;
     transition: background-color 0.2s;
 }
 
 .task:hover {
-    background-color: #374151; /* gray-700 */
+    background-color: var(--task-bg-hover);
 }
 
 .task input.text {
     flex: 1;
     background: transparent;
     border: none;
-    color: #f3f4f6; /* gray-100 */
+    color: var(--text);
     padding: 0.25rem;
     font-size: 1rem;
 }
 
 .task.completed input.text {
     text-decoration: line-through;
-    color: #9ca3af; /* gray-400 */
+    color: var(--text-muted);
 }
 
 .task-buttons {
@@ -44,14 +102,17 @@
     transition: background-color 0.2s;
 }
 
-.edit { background-color: #3b82f6; } /* blue-500 */
-.edit:hover { background-color: #2563eb; } /* blue-600 */
 
-.delete { background-color: #ef4444; } /* red-500 */
-.delete:hover { background-color: #dc2626; } /* red-600 */
+.edit { background-color: var(--button-edit); }
+.edit:hover { background-color: var(--button-edit-hover); }
 
-.complete { background-color: #10b981; } /* green-500 */
-.complete:hover { background-color: #059669; } /* green-600 */
+
+.delete { background-color: var(--button-delete); }
+.delete:hover { background-color: var(--button-delete-hover); }
+
+
+.complete { background-color: var(--button-complete); }
+.complete:hover { background-color: var(--button-complete-hover); }
 
 /* simple fade out animation for delete */
 .fade-out {
